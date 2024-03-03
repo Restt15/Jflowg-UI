@@ -1,3 +1,5 @@
 export * from "./Home"
 export * from "./Harticles"
 export * from "./About"
+export * from "./Form"
+export * from "./Cart"
