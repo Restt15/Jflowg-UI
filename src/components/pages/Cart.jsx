@@ -2,14 +2,26 @@
 import { Breadcrumbs } from "@mui/material";
 
 import { Button } from "@material-tailwind/react";
-import { useState } from "react";
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import { FaTimes } from "react-icons/fa";
 
 
 
-const Cart = () => {
-  const [cart, setCart] = useState([]); // Estado para el carrito
+const Cart = ({cart, setCart }) => {
+
+  const calculateTotal = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total.toFixed(2);
+  };
+
+  const removeFromCart = (itemid) => {
+    const updatedCart = cart.filter(item => item.id !== itemid);
+    setCart(updatedCart);
+  };
+  
  
   return (
     <div className="container mx-auto px-20">
@@ -39,6 +51,7 @@ const Cart = () => {
                 <CardBody>
                   <div className="flex items-center justify-between">
                     <div>
+                
                       <Typography color="black" className="text-lg font-semibold">
                         {item.title}
                       </Typography>
@@ -49,7 +62,7 @@ const Cart = () => {
                         ${item.price.toFixed(2)}
                       </Typography>
                     </div>
-                    <Button color="red" size="sm" buttonType="filled" rounded={true}>
+                    <Button color="red" size="sm" buttonType="filled" rounded={true} onClick={() => removeFromCart(item.id)}>
                       <FaTimes />
                     </Button>
                   </div>
@@ -60,6 +73,7 @@ const Cart = () => {
               <Button color="blue" buttonType="filled" size="regular" rounded={false}>
                 Continuar Comprando
               </Button>
+              <Typography color="black" className="text-lg font-semibold">Total: ${calculateTotal()}</Typography>
               <Button color="blue" buttonType="filled" size="regular" rounded={false}>
                 Pagar
               </Button>

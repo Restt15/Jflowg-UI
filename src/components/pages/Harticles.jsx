@@ -130,7 +130,7 @@ const data = [
 ]
 
 // eslint-disable-next-line react/prop-types
-const Harticles = ({addToCart}) => {
+const Harticles = ({ addToCart, }) => {
     const [alertMessage, setAlertMessage] = useState('');
     const [LastAddedItem, setLastAddedItem] = useState(null)
     const [foods, setFoods] = React.useState(data);
