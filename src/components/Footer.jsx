@@ -1,31 +1,60 @@
-import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
+
+import { Typography } from "@material-tailwind/react";
+import Logo from "../assets/website/logo.png"
 
 const Footer = () => {
   return (
-    <div className="site-footer bg-blue-900">
-        <div className="container">
-        <div className="grid grid-flow-col justify-between">
-            <div className="p-5">
-            <h1 className="text-2xl font-bold text-white">About Us</h1>
-            <p className="text-sm mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, nemo dasdad adsadada
-            dasdasdsad adasd adad asd .</p>
-            </div>
-            <div className="p-5 ">
-            <h1 className="text-2xl font-bold text-white text-center">Redes Sociales</h1>
-            <div className="flex justify-start">
-                <div className="flex items-center"><FaWhatsapp className="mr-2"/>Escribenos en Whatsapp</div>
-                <div className="flex items-center"><FaFacebook className="mr-2"/>Siguenos en Facebook</div>
-                <div className="flex items-center"><FaInstagram className="mr-2"/>Siguenos en Instagram</div>
-            </div>
-            </div>
-            <div className="p-5">
-            <h1 className="text-2xl font-bold text-white">Contact</h1>
-            <p className="text-sm mt-3">lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, nemo dasdad adsadada
-            dasdasdsad adasd adad asd .</p>
-            </div>
-         </div>
-        </div>
-    </div>
+    <footer className="w-full bg-white p-8">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+        <img src={Logo} alt="logo-ct" className="w-10" />
+        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+          <li>
+            <Typography
+              as="a"
+              href="#"
+              color="blue-gray"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              About Us
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              as="a"
+              href="#"
+              color="blue-gray"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              License
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              as="a"
+              href="#"
+              color="blue-gray"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              Contribute
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              as="a"
+              href="#"
+              color="blue-gray"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
+              Contact Us
+            </Typography>
+          </li>
+        </ul>
+      </div>
+      <hr className="my-8 border-blue-gray-50" />
+      <Typography color="blue-gray" className="text-center font-normal">
+        &copy; JFLOWG RestDEV
+      </Typography>
+    </footer>
   )
 }
 

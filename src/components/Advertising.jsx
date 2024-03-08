@@ -2,27 +2,28 @@
 
 import Image1 from "../assets/Advertising/sueteres.png.png";
 import Image2 from "../assets/Advertising/sueters2.png.png";
-
+import { Button } from '@material-tailwind/react';
 
 import Slider from "react-slick";
 
-const ImageList = [
-    {
-        id: 1,
-        image: Image1,
-        title: "Sueteres",
-        description: "Los mejores sueteres de la temporada"
-    },
-    {
-        id: 2,
-        image: Image2,
-        title: "Sueteres",
-        description: "Los mejores sueteres de la temporada"
-    }
-];
+
 
 
 const Advertising = () => {
+    const ImageList = [
+        {
+            id: 1,
+            image: Image1,
+            title: "Sueteres",
+            description: "Los mejores sueteres de la temporada"
+        },
+        {
+            id: 2,
+            image: Image2,
+            title: "Sueteres",
+            description: "Los mejores sueteres de la temporada"
+        }
+    ];
 
     var settings = {
         dots:false,
@@ -38,7 +39,7 @@ const Advertising = () => {
     };
     
 return (
-    <div className="relative overflow-hidden sm:min-h-[350px] flex justify-center bg-blue-200 items-center dark:bg-sky-800 dark:text-white duration-700">     
+    <div className="relative overflow-hidden sm:min-h-[350px] flex justify-center items-center dark:bg-sky-800 dark:text-white duration-700">     
         {/* publicidad */}
         <div className="container pb-8 sm:pb-0">
             <Slider {...settings}>
@@ -55,12 +56,12 @@ return (
                                 {data.description}
                             </p>
                             <div>
-                                <button
-                                    className="px-3 py-2 border-2 border-blue-500 bg-blue-500 text-white rounded-md transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110
-                                hover:bg-blue-700 hover:shadow-lg w-auto"
+                                <Button
+                                    className=""
+                               
                                 >
                                     Ordena Ahora
-                                </button>
+                                </Button>
                             </div>
                         </div>
                         {/* Secciones Publicidad */}

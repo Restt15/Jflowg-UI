@@ -1,33 +1,20 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardBody,
   Input,
   Typography,
-  Checkbox,
-  ListItem,
-  ListItemPrefix,
-  Button,
+  Button
 
 } from "@material-tailwind/react";
 import { Breadcrumbs } from "@mui/material";
-import { useState } from "react";
-
-
-const Form = () => {
-  const [total, setTotal] = useState(0);
-  const [subtotal, setSubtotal] = useState(0)
-   const [showForm, setShowForm] = useState(false)
+import { Select, Option } from "@material-tailwind/react";
 
 
 
-  const handleCheckboxChange = (isChecked, price) => {
-    if (isChecked) {
-      setTotal(total + price);
-    } else {
-      setTotal(total - price);
-    }
-    setShowForm(isChecked)
-  }
+
+// eslint-disable-next-line react/prop-types
+const Form = ({ calculateTotal, cart, calculateTotalItems } ) => {
 
   return (
     <div className="container mx-auto px-20">
@@ -47,8 +34,8 @@ const Form = () => {
       </div>
       <section className="px-4 sm:px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-start justify-between">
         <div className="flex flex-col w-full sm:w-2/3">
-          <article className="flex flex-col space-y-6">
-            <Card className="bg-gray-200">
+          <article className="flex flex-col space-y-8">
+            <Card className="">
               <CardBody>
                 <Typography variant="h5" color="gray" className="mb-2">
                   Formulario de Comprador
@@ -62,7 +49,7 @@ const Form = () => {
                 </form>
               </CardBody>
             </Card>
-            <Card className="bg-gray-200">
+            <Card className="">
               <CardBody>
                 <Typography variant="h5" color="gray" className="mb-2">
                   Formulario de Comprador
@@ -96,120 +83,95 @@ const Form = () => {
                 </form>
               </CardBody>
             </Card>
-            <Card>
-            <ListItem className="p-0">
-        <label
-          htmlFor="vertical-list-react"
-          className="flex w-full cursor-pointer items-center px-3 py-2"
-        >
-          <ListItemPrefix className="mr-3">
-            <Checkbox
-              id="vertical-list-react"
-              ripple={false}
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0",
-              }}
-              onChange={(isChecked) => handleCheckboxChange(isChecked, 3.50)}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">
-            React.js
-          </Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label
-          htmlFor="vertical-list-vue"
-          className="flex w-full cursor-pointer items-center px-3 py-2"
-        >
-          <ListItemPrefix className="mr-3">
-            <Checkbox
-              id="vertical-list-vue"
-              ripple={false}
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0",
-              }}
-              onChange={(isChecked) => handleCheckboxChange(isChecked, 5.00)}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">
-            Vue.js
-          </Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label
-          htmlFor="vertical-list-svelte"
-          className="flex w-full cursor-pointer items-center px-3 py-2"
-        >
-          <ListItemPrefix className="mr-3">
-            <Checkbox
-              id="vertical-list-svelte"
-              ripple={false}
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0",
-              }}
-              onChange={(isChecked) => handleCheckboxChange(isChecked, 4.00)}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">
-            Svelte.js
-          </Typography>
-        </label>
-      </ListItem>
-     
+            <Card className="">
+            <form className="flex w-full flex-col gap-6">
+            <Select label="Método de envío" error> 
+  <Option className="py-2 px-4 cursor-pointer hover:bg-gray-100">Zona #1 (Felipillo, 5 de mayo, Bethania, Bella vista, El cangrejo)</Option>
+  <Option className="py-2 px-4 cursor-pointer hover:bg-gray-100">Zona #2 (24 de diciembre, Mega mall, las Mañanitas, Tocumen, San Isidro)</Option>
+  <Option className="py-2 px-4 cursor-pointer hover:bg-gray-100">Zona #3  (Condado del rey, Costa del este, Campo Limber, Parque Lefevre, Rio Abajo, 12 de octubre)</Option>
+  <Option className="py-2 px-4 cursor-pointer hover:bg-gray-100">Zona #4 (Albrook, Ancon, Don Bosco, LLano Bonito, San Antonio, Los Andes) </Option>
+</Select>
+<Input type="date" variant="standard" label="Fecha de entrega" size="lg" />
+              </form>
             </Card>
-            {showForm && (
-        <Card className="bg-gray-200">
-          <CardBody>
-            <Typography variant="h5" color="gray" className="mb-2">
-              Formulario de Comprador
-            </Typography>
-            <form className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-              <Input variant="standard" label="Direccion" size="lg" />
-              <Input variant="standard" label="Apartamento" size="lg" />
-             
-              <p>Total fee: ${total.toFixed(2)}</p>
-            </form>
-          </CardBody>
-        </Card>
-      )}
           </article>
         </div>
-        <div className="w-full sm:w-1/3 mt-12 sm:mt-0 sticky top-0">
-              <Card className="h-40 w-80  ml-auto">
-                <CardBody className="flex flex-col justify-end">
-                  <Typography className="text-sm self-end">
-                    Subtotal: ${subtotal}
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    color="blue-gray"
-                    className="mb-2 text-sm self-end"
-                  >
-                    Total ${total}
-                  </Typography>
-                  <a href="/Harticles/Form">
-                    <Button size="sm" fullWidth>
-                      Filled
-                    </Button>
-                  </a>
-                  <Typography className="text-sm self-center"> o </Typography>
-                  <a href="/Harticles">
-                    <Button size="sm" fullWidth variant="text">
-                      {" "}
-                      Continuar Comprando
-                    </Button>
-                  </a>
-                </CardBody>
-              </Card>
+
+        <div className="flex flex-wrap">
+  <aside className="w-full md:w-2/3">
+    {cart.map((item, index) => (
+      <Card key={index} className="mb-1 border border-gray-200 rounded-md overflow-hidden shadow-lg relative">
+      <div className="flex items-center p-4">
+        <img src={item.Image} alt="imagen" className="w-24 h-24 object-contain mr-4" />
+        <div className="flex flex-col flex-grow relative">
+          <Typography color="black" className="text-lg font-semibold">
+            {item.title}
+          </Typography>
+          <Typography color="gray" className="text-sm font-normal mt-1">
+            {item.description}
+          </Typography>
+          <div className="flex items-center mt-2">
+            <Typography color="black" className="text-lg font-semibold mr-2">
+              ${item.price.toFixed(2)}
+            </Typography>     
+            <div className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-red-900 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center justify-center">
+              {item.quantity}
             </div>
+          </div>
+        </div>
+      </div>
+    </Card>
+    
+    ))}
+  </aside>
+  
+  <div className="w-full md:w-1/3 mt-12 sm:mt-0 sticky top-0 md:pl-4">
+  <Card className=" w-full rounded-lg shadow-md p-4">
+  <CardBody className="flex flex-col justify-end">
+    <div className="mb-2">
+      <Typography className="text-sm text-black self-start">
+      Resumen del Pedido
+      
+      </Typography>
+      <Typography className="text-sm self-end"> 
+        Articulos ({calculateTotalItems()}) 
+      </Typography>
+      <span className="block h-0.5 bg-gray-200 w-full"></span>
+    </div>
+    <div className="mb-2">
+      <Typography className="text-sm self-end">
+        Entrega 
+      </Typography>
+      <span className="block h-0.5 bg-gray-200 w-full"></span>
+    </div>
+    <div className="mb-2">
+      <Typography className="text-sm self-end">
+        Subtotal: ${calculateTotal()}
+      </Typography>
+      <span className="block h-0.5 bg-gray-200 w-full"></span>
+    </div>
+    <div>
+      <Typography variant="h5" color="blue-gray" className="text-sm self-end">
+        Total ${calculateTotal()}
+      </Typography>
+      <span className="block h-0.5 bg-gray-200 w-full"></span>
+    </div>
+  </CardBody>
+              <a href="/Harticles/Cart">
+            <Button variant="text" color="red" size="sm" className="w-full"> Detalles de envio</Button>
+            </a>
+            <a>
+            <Button variant="standard" color="green" size="sm" className="w-full">Continuar Pago</Button>
+            </a>
+</Card>
+
+  </div>
+</div>
       </section>
     </div>
   );
 };
+
+
 
 export default Form;

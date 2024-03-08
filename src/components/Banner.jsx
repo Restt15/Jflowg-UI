@@ -1,9 +1,20 @@
 import BannerImg from "../assets/Banner/jflowg.jpeg";
-import { GrSecure } from "react-icons/gr";
+
+import {
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineHeader,
+  TimelineIcon,
+  TimelineBody,
+  Typography,
+} from "@material-tailwind/react";
+
+import { HomeIcon, BellIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
 
 const Banner = () => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0 bg-blue-600">
+    <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0 bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-centerb">
           {/*image section*/}
@@ -15,31 +26,67 @@ const Banner = () => {
             />
           </div>
           {/* Text Section */}
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white">
-              Lorem ipsum dolor sit amet consecte
-            </h1>
-            <p className="text-dark text-lg mt-4 leading-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem, nemo.
-            </p>
-            <div className="flex items-center gap-2 mt-5">
-              <GrSecure className="text-3xl text-green-500" />
-              <p className="text-dark text-lg">100% Secure Payment</p>
-              </div>
-              <div className="flex items-center gap-2 mt-5">
-                <GrSecure className="text-3xl text-green-500" />
-                <p className="text-dark text-lg">100% Secure Payment</p>
-              </div>
-              <div className="flex items-center gap-2 mt-5">
-                <GrSecure className="text-3xl text-green-500" />
-                <p className="text-dark text-lg">100% Secure Payment</p>
-              </div>
-              <div className="flex items-center gap-2 mt-5">
-                <GrSecure className="text-3xl text-green-500" />
-                <p className="text-dark text-lg">100% Secure Payment</p>
-              </div>
-          </div>
+          <div className="w-[32rem]">
+      <Timeline>
+        <TimelineItem>
+          <TimelineConnector />
+          <TimelineHeader>
+            <TimelineIcon className="p-2">
+              <HomeIcon className="h-4 w-4" />
+            </TimelineIcon>
+            <Typography variant="h5" color="blue-gray">
+              Timeline Title Here.
+            </Typography>
+          </TimelineHeader>
+          <TimelineBody className="pb-8">
+            <Typography color="gary" className="font-normal text-gray-600">
+              The key to more success is to have a lot of pillows. Put it this way, it took me
+              twenty five years to get these plants, twenty five years of blood sweat and tears, and
+              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
+              luv.
+            </Typography>
+          </TimelineBody>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineConnector />
+          <TimelineHeader>
+            <TimelineIcon className="p-2">
+              <BellIcon className="h-4 w-4" />
+            </TimelineIcon>
+            <Typography variant="h5" color="blue-gray">
+              Timeline Title Here.
+            </Typography>
+          </TimelineHeader>
+          <TimelineBody className="pb-8">
+            <Typography color="gary" className="font-normal text-gray-600">
+              The key to more success is to have a lot of pillows. Put it this way, it took me
+              twenty five years to get these plants, twenty five years of blood sweat and tears, and
+              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
+              luv.
+            </Typography>
+          </TimelineBody>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineHeader>
+            <TimelineIcon className="p-2">
+              <CurrencyDollarIcon className="h-4 w-4" />
+            </TimelineIcon>
+            <Typography variant="h5" color="blue-gray">
+              Timeline Title Here.
+            </Typography>
+          </TimelineHeader>
+          <TimelineBody>
+            <Typography color="gary" className="font-normal text-gray-600">
+              The key to more success is to have a lot of pillows. Put it this way, it took me
+              twenty five years to get these plants, twenty five years of blood sweat and tears, and
+              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
+              luv.
+            </Typography>
+          </TimelineBody>
+        </TimelineItem>
+      </Timeline>
+    </div>
+
         </div>
       </div>
     </div>
