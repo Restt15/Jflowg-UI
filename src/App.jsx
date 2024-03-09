@@ -15,11 +15,13 @@ function App() {
   
   const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   const [cart, setCart] = useState(initialCart);
-
+ 
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
+
+
 
   const addToCart = (product) => {
     const existingProductIndex = cart.findIndex(item => item.id === product.id)
@@ -76,8 +78,8 @@ const calculateTotalItems = () => {
       <Navbar cart={cart} />
       <Routes>
         <Route path="/Home" exact element={<Home />} />
-        <Route path="/Harticles" exact element={<Harticles addToCart={addToCart} products={products}/>} />
-        <Route path="/Harticles/Details/:id" element={<Details products={products} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} calculateTotal={calculateTotal} cart={cart} setCart={cart} addToCart={addToCart}/>} />
+        <Route path="/Harticles" exact element={<Harticles addToCart={addToCart} products={products} />} />
+        <Route path="/Harticles/Details/:id" element={<Details products={products} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}  cart={cart} setCart={cart} addToCart={addToCart}/>} />
          <Route path="/About" exact element={<About />} />
         <Route path="/Harticles/Cart" exact element={<Cart cart={cart} setCart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeItem={removeItem} calculateTotal={calculateTotal}/>} />
         <Route path="/Harticles/Form" exact element={<Form cart={cart} calculateTotal={calculateTotal}calculateTotalItems={calculateTotalItems}  /> } />

@@ -92,7 +92,7 @@ const product = [
       title: "Pantalones",
       category: "Zapatillas",
       Image: Producto1,
-      description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds dasddas dad sd asda dad asda das dasd asd axca xmcdasd",
+      description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
       price: 35.00,
       quantity: 1
     },
