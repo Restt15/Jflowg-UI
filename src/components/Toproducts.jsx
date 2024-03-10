@@ -42,6 +42,7 @@ const ToProductsData = [
 const ToProducts = () => {
   return (
     <div className="bg-white shadow-lg  p-5">
+        <hr className="my-6" />
       <div className="container mx-auto">
         {/* Titulo */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">

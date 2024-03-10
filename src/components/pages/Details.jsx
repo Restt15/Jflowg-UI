@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 
 import { useParams } from "react-router-dom";
-import products from "../../assets/data/products";
+
 import { Breadcrumbs, Typography } from "@mui/material";
 import Producto1 from "../../assets/Toproducts/Snegro.png.jpeg";
 import { Button } from "@material-tailwind/react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const Details = ({ setCart, addToCart, increaseQuantity, decreaseQuantity,products, cart }) => {
+const Details = ({ addToCart, increaseQuantity, decreaseQuantity,products}) => {
   const handleAddToCart = (item) => {
     addToCart(item);
   };

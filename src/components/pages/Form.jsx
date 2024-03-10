@@ -4,7 +4,8 @@ import {
   CardBody,
   Input,
   Typography,
-  Button
+  Button,
+  Textarea
 
 } from "@material-tailwind/react";
 import { Breadcrumbs } from "@mui/material";
@@ -22,8 +23,7 @@ const Form = ({ calculateTotal, cart, calculateTotalItems } ) => {
         <div className="flex-none w-80 h-24 mt-12">
           <Breadcrumbs>
             <a className="opacity-60">Ver Orden</a>
-            <a className="text-black">Envio</a>
-            <a className="opacity-60">Pago</a>
+            <a className="text-black">Envio y Pago</a>
           </Breadcrumbs>
         </div>
         <div>
@@ -40,12 +40,18 @@ const Form = ({ calculateTotal, cart, calculateTotalItems } ) => {
                 <Typography variant="h5" color="gray" className="mb-2">
                   Formulario de Comprador
                 </Typography>
-                <form className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+                <form>
+                  <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
                   <Input variant="standard" label="Nombre" size="lg" />
+                  <Input variant="standard" label="Apellido" size="lg" />
                   <Input variant="standard" label="Email" size="lg" />
+                  <Input variant="standard" label="Cédula / RUC-DV / Pasaporte" size="lg" />
                   <Input variant="standard" label="Telefono" size="lg" />
-                  <Input variant="standard" label="Ciudad" size="lg" />
-                  
+                  </div>
+                  <hr className="my-6" />
+                  <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-1">
+                    <Textarea label="Notas del pedido (opcional)"></Textarea>
+                  </div>
                 </form>
               </CardBody>
             </Card>

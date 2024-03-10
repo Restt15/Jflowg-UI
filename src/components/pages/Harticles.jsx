@@ -1,10 +1,8 @@
 import { Breadcrumbs } from "@mui/material"
 import React from "react"
 import { useState } from 'react';
-import { Card, CardBody, Button, CardFooter, Typography, Radio, Chip} from "@material-tailwind/react"
+import { Card, CardBody, Button, CardFooter, Typography, Radio} from "@material-tailwind/react"
 import products from "../../assets/data/products"
-import { Slider } from "@material-tailwind/react"
-import { FaReact } from 'react-icons/fa';
 
 
 // eslint-disable-next-line react/prop-types
@@ -57,7 +55,6 @@ const Harticles = ({ addToCart, }) => {
     </div>  
     <div>
           <p className="font-semibold text-xl text-gray-900 border-b-2 border-black pb-12">
-           
           </p>
         </div>
   </div>
