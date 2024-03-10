@@ -10,7 +10,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 5.00,
       quantity: 1
   
     },
@@ -20,7 +20,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 15.00,
       quantity: 1
     },
     {
@@ -29,7 +29,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 15.00,
       quantity: 1
   
     },
@@ -39,7 +39,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 5.00,
       quantity: 1
     },
     {
@@ -48,7 +48,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 5.00,
       quantity: 1
     },
     {
@@ -57,7 +57,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 30.00,
       quantity: 1
     },
     {
@@ -66,7 +66,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 25.00,
       quantity: 1
     },
     {
@@ -84,7 +84,7 @@ const product = [
       category: "Ropa",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 30.00,
       quantity: 1
     },
     {
@@ -111,7 +111,7 @@ const product = [
       category: "Zapatillas",
       Image: Producto1,
       description: "lorem dsa jdsaj itsum djsdj 13md asd jad amdkasdkadkad kda dasd ada mds",
-      price: 35.00,
+      price: 40.00,
       quantity: 1
     },
     {

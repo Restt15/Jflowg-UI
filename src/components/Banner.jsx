@@ -26,7 +26,7 @@ const Banner = () => {
             />
           </div>
           {/* Text Section */}
-          <div className="w-[32rem]">
+          <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0">
       <Timeline>
         <TimelineItem>
           <TimelineConnector />
