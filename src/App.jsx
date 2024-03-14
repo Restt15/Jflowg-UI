@@ -8,6 +8,7 @@ import Cart from "./components/pages/Cart";
 import Navbar from "./components/Navbar";
 import Details from "./components/pages/Details";
 import products from "./assets/data/products"
+import Payrecieve from "./components/pages/Payrecieve";
 
 
 
@@ -83,6 +84,7 @@ const calculateTotalItems = () => {
          <Route path="/About" exact element={<About />} />
         <Route path="/Harticles/Cart" exact element={<Cart cart={cart} setCart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeItem={removeItem} calculateTotal={calculateTotal}/>} />
         <Route path="/Harticles/Form" exact element={<Form cart={cart} calculateTotal={calculateTotal}calculateTotalItems={calculateTotalItems}  /> } />
+        <Route path="/Payrecieve" exact element={ <Payrecieve />} />
       </Routes>
     </div>
   );
