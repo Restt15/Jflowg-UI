@@ -9,18 +9,24 @@ import Navbar from "./components/Navbar";
 import Details from "./components/pages/Details";
 import products from "./assets/data/products"
 import Payrecieve from "./components/pages/Payrecieve";
-
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
+import { useLocation } from 'react-router-dom';
 
 
 function App() {
-  
-  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
-  const [cart, setCart] = useState(initialCart);
- 
 
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+  const location = useLocation();
+  const showWelcome = location.pathname === '/' || location.pathname === '/';
+  
+    
+    const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const [cart, setCart] = useState(initialCart);
+   
+
+    useEffect(() => {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
 
 
@@ -77,6 +83,7 @@ const calculateTotalItems = () => {
   return (
     <div className="">
       <Navbar cart={cart} />
+      {showWelcome && <p className="text-blue-500 text-2xl text-center mt-12">Bienvenido</p>}
       <Routes>
         <Route path="/Home" exact element={<Home />} />
         <Route path="/Harticles" exact element={<Harticles addToCart={addToCart} products={products} />} />
@@ -85,6 +92,8 @@ const calculateTotalItems = () => {
         <Route path="/Harticles/Cart" exact element={<Cart cart={cart} setCart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} removeItem={removeItem} calculateTotal={calculateTotal}/>} />
         <Route path="/Harticles/Form" exact element={<Form cart={cart} calculateTotal={calculateTotal}calculateTotalItems={calculateTotalItems}  /> } />
         <Route path="/Payrecieve" exact element={ <Payrecieve />} />
+        <Route path="/Login" exact element={ <Login />} />
+        <Route path="/Register" exact element={ <Register />} />
       </Routes>
     </div>
   );

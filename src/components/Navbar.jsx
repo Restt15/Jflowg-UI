@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { Button, Badge, IconButton, MobileNav, Typography, Navbar } from '@material-tailwind/react';
 import { FaShoppingCart } from 'react-icons/fa';
 
+   
 const NavbarSimp = ({ cart }) => {
-  const [openNav, setOpenNav] = useState(false); // Usa useState en lugar de React.useState
-
+  
+  const [openNav, setOpenNav] = useState(false); 
+  
+   
   useEffect(() => {
-    // Utiliza useEffect correctamente
     const handleResize = () => {
       if (window.innerWidth >= 960) {
         setOpenNav(false);
@@ -18,7 +20,9 @@ const NavbarSimp = ({ cart }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Agrega un array vacío como segundo argumento para ejecutar el efecto solo una vez
+  }, []); 
+
+  
 
   const navList = (
     <ul className='mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6'>
@@ -29,7 +33,7 @@ const NavbarSimp = ({ cart }) => {
         className='p-1 font-normal'
       >
         <Link to="/Home">
-          <Button size="xl">Home</Button>
+          <Button size="xs">Home</Button>
         </Link>
       </Typography>
       <Typography
@@ -39,7 +43,7 @@ const NavbarSimp = ({ cart }) => {
         className='p-1 font-normal'
       >
         <Link to="/Harticles">
-          <Button size="xl">Articulos</Button>
+          <Button size="xs">Articulos</Button>
         </Link>
       </Typography>
       <Typography
@@ -49,15 +53,15 @@ const NavbarSimp = ({ cart }) => {
         className='p-1 font-normal'
       >
         <Link to="/About">
-          <Button size="xl">Acerca de Nosotros</Button>
+          <Button size="xs">Acerca de Nosotros</Button>
         </Link>
       </Typography>
-      <Typography
-        as="li"
-        variant='small'
-        color='blue-gray'
-        className='p-1 font-normal'
-      >
+    <Typography
+      as="li"
+      variant='small'
+      color='blue-gray'
+      className='p-1 font-normal'
+    >
         <Link to="/Harticles/Cart" className="relative inline-block">
           <Badge content={cart.length}>
             <Button variant='filled' className="text-white relative w-auto">
@@ -66,6 +70,8 @@ const NavbarSimp = ({ cart }) => {
           </Badge>
         </Link>
       </Typography>
+
+      
     </ul>
   );
 
@@ -75,7 +81,7 @@ const NavbarSimp = ({ cart }) => {
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
-            href="#"
+            href="/Home"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
             JFLOWG
@@ -123,6 +129,28 @@ const NavbarSimp = ({ cart }) => {
         </div>
         <MobileNav open={openNav}>
           {navList}
+          <div className="flex items-center justify-center gap-x-1">
+  <Typography
+    as="li"
+    variant="small"
+    color='blue-gray'
+    className='p-1 font-normal flex items-center justify-center'
+  >
+    <Link to="/Login">
+      <Button size="xs" fullWidth>Login</Button>
+    </Link>
+  </Typography>
+  <Typography
+    as="li"
+    variant='small'
+    color='blue-gray'
+    className='p-1 font-normal flex items-center justify-center'
+  >
+    <Link to="/Register">
+      <Button size="xs" className="w-full">Sign Up</Button>
+    </Link>
+  </Typography>
+</div>
         </MobileNav>
       </Navbar>
     
